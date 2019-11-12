@@ -1,7 +1,7 @@
 {
   "name": "scratch",
   "version": "0.1.0",
-  "homepage":"https://ekaone.github.io/scratch/",
+  "homepage": "https://ekaone.github.io/scratch/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.6.0",
