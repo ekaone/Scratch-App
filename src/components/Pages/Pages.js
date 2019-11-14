@@ -2,12 +2,12 @@ import React from 'react'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';  
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import TabPanel from "./TabPanel"
+
+import Tag from "../Tag"
 
 function a11yProps(index) {
   return {
@@ -53,35 +53,35 @@ function Pages() {
               scrollButtons="auto"
               aria-label="scrollable auto tabs example"
             >
-              <Tab label="Item One" {...a11yProps(0)} />
-              <Tab label="Item Two" {...a11yProps(1)} />
-              <Tab label="Item Three" {...a11yProps(2)} />
-              <Tab label="Item Four" {...a11yProps(3)} />
-              <Tab label="Item Five" {...a11yProps(4)} />
-              <Tab label="Item Six" {...a11yProps(5)} />
-              <Tab label="Item Seven" {...a11yProps(6)} />
+              <Tab label="Tags" {...a11yProps(1)} />
+              <Tab label="Form" {...a11yProps(0)} />
+              <Tab label="Scrapper" {...a11yProps(2)} />
+              <Tab label="Order" {...a11yProps(3)} />
+              <Tab label="Todo" {...a11yProps(4)} />
+              <Tab label="Traffic" {...a11yProps(5)} />
+              <Tab label="Other" {...a11yProps(6)} />
             </Tabs>
           </AppBar>
           <TabPanel value={value} index={0}>
-            Item One
+            <Tag />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            Item Two
+            Form
           </TabPanel>
           <TabPanel value={value} index={2}>
-            Item Three
+            Scrapper
           </TabPanel>
           <TabPanel value={value} index={3}>
-            Item Four
+            Order
           </TabPanel>
           <TabPanel value={value} index={4}>
-            Item Five
+            Todo
           </TabPanel>
           <TabPanel value={value} index={5}>
-            Item Six
+            Traffic
           </TabPanel>
           <TabPanel value={value} index={6}>
-            Item Seven
+            Other
           </TabPanel>
         </div>
       </MuiThemeProvider>
