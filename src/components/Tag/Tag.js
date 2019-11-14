@@ -1,15 +1,16 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import Avatar from '@material-ui/core/Avatar';
 import Chip from '@material-ui/core/Chip';
 import FaceIcon from '@material-ui/icons/Face';
 import DoneIcon from '@material-ui/icons/Done';
-import A from "../Images/A.jpg"
+import Divider from '@material-ui/core/Divider';
+import InputTag from './InputTag'
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     justifyContent: 'center',
+    marginTop: 10,
     flexWrap: 'wrap',
     '& > *': {
       margin: theme.spacing(0.5),
@@ -18,6 +19,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function Tag() {
+
+  const createTags = (props) => (
+    <Chip
+      icon={<FaceIcon />}
+      label="Clickable deletable"
+      onClick={handleClick}
+      onDelete={handleDelete}
+      variant="outlined"
+      deleteIcon={<DoneIcon style={{ color: "green" }} />}
+    />
+  )
 
   const classes = useStyles();
   const handleDelete = () => {
@@ -29,63 +41,11 @@ function Tag() {
 
   return (
     <>
+      <InputTag />
+      <Divider />
       <div className={classes.root}>
-      <Chip label="Basic" variant="outlined" />
-      <Chip label="Disabled" disabled variant="outlined" />
-      <Chip
-        avatar={<Avatar>M</Avatar>}
-        label="Clickable"
-        onClick={handleClick}
-        variant="outlined"
-      />
-      <Chip
-        avatar={<Avatar alt="Natacha" src={A} />}
-        label="Deletable"
-        onDelete={handleDelete}
-        variant="outlined"
-      />
-      <Chip
-        icon={<FaceIcon />}
-        label="Clickable deletable"
-        onClick={handleClick}
-        onDelete={handleDelete}
-        variant="outlined"
-      />
-      <Chip
-        label="Custom delete icon"
-        onClick={handleClick}
-        onDelete={handleDelete}
-        deleteIcon={<DoneIcon />}
-        variant="outlined"
-      />
-      <Chip label="Clickable link" component="a" href="#chip" clickable variant="outlined" />
-      <Chip
-        avatar={<Avatar>M</Avatar>}
-        label="Primary clickable"
-        clickable
-        color="primary"
-        onDelete={handleDelete}
-        deleteIcon={<DoneIcon />}
-        variant="outlined"
-      />
-      <Chip
-        icon={<FaceIcon />}
-        label="Primary clickable"
-        clickable
-        color="primary"
-        onDelete={handleDelete}
-        deleteIcon={<DoneIcon />}
-        variant="outlined"
-      />
-      <Chip label="Deletable primary" onDelete={handleDelete} color="primary" variant="outlined" />
-      <Chip
-        icon={<FaceIcon />}
-        label="Deletable secondary"
-        onDelete={handleDelete}
-        color="secondary"
-        variant="outlined"
-      />
-    </div>
+        { createTags() }
+      </div>
     </>
   )
 }
