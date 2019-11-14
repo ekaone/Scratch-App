@@ -17,15 +17,18 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Tag() {
+function SampleTag() {
 
   const classes = useStyles();
+
   const handleDelete = () => {
     console.info('You clicked the delete icon.');
   };
+
   const handleClick = () => {
     console.info('You clicked the Chip.');
   };
+
 
   return (
     <>
@@ -90,4 +93,4 @@ function Tag() {
   )
 }
 
-export default Tag
+export default SampleTag
