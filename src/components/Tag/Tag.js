@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
 import FaceIcon from '@material-ui/icons/Face';
@@ -20,10 +20,11 @@ const useStyles = makeStyles(theme => ({
 
 function Tag() {
 
-  const createTags = (props) => (
+  const createTags = (v, id) => (
     <Chip
+      key={id}
       icon={<FaceIcon />}
-      label="Clickable deletable"
+      label={v}
       onClick={handleClick}
       onDelete={handleDelete}
       variant="outlined"
@@ -32,6 +33,26 @@ function Tag() {
   )
 
   const classes = useStyles();
+
+  const [values, setValues] = useState("")
+  const [tags, setTags] = useState([
+    {id: 1, v: "Default Tag"}
+  ])
+
+  const handleChange = (e) => {
+    return setValues(e.target.value)
+  }
+
+  const handleSave = () => {
+    if(values != "") {
+      setTags(ps => {
+        return [ ...ps, { id: Math.random(), v: values }]
+      }) 
+    } else {
+      return null
+    }
+  } 
+    
   const handleDelete = () => {
     console.info('You clicked the delete icon.');
   };
@@ -41,10 +62,18 @@ function Tag() {
 
   return (
     <>
-      <InputTag />
+      <InputTag 
+        values={values}
+        handlerChange={handleChange}
+        handlerClick={handleSave}
+      />
       <Divider />
       <div className={classes.root}>
-        { createTags() }
+        { 
+          tags.map(t => {
+            return createTags(t.v, t.id)
+          }) 
+        }
       </div>
     </>
   )
