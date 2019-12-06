@@ -44,7 +44,7 @@ function Tag() {
   }
 
   const handleSave = () => {
-    if(values != "") {
+    if(values !== "") {
       setTags(ps => {
         return [ ...ps, { id: Math.random(), v: values }]
       }) 
