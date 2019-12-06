@@ -39,7 +39,7 @@ const WebPush = props => {
     });
     
     var data = {
-      app_id: "2995d491-da73-4820-870d-19660e2c8bf7",
+      app_id: "APP_ID",
       headings: { "en": notificationState.title },
       contents: { "en": notificationState.subtitle },
       included_segments: ["All"]
@@ -47,7 +47,7 @@ const WebPush = props => {
 
     var headers = {
       "Content-Type": "application/json; charset=utf-8",
-      "Authorization": "Basic YjIzMmY2MGUtMTc4ZC00M2Y4LWE3NDQtZDAyZmQ5MmVkYTU2"
+      "Authorization": "Basic REST_API_KEY"
     };
 
     var options = {
