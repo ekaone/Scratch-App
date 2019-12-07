@@ -8,8 +8,10 @@
     "@material-ui/icons": "^4.5.1",
     "gh-pages": "^2.1.1",
     "react": "^16.11.0",
+    "react-device-detect": "^1.11.14",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "store": "^2.0.12"
   },
   "scripts": {
     "start": "react-scripts start",

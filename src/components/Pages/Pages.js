@@ -9,7 +9,8 @@ import TabPanel from "./TabPanel"
 
 // Components
 import Tag from "../Tag"
-import WebPush from '../WebPush'
+import Stored from "../Stored"
+// import WebPush from '../WebPush'
 
 function a11yProps(index) {
   return {
@@ -55,7 +56,7 @@ function Pages() {
               aria-label="scrollable auto tabs example"
             >
               <Tab label="Tags" {...a11yProps(1)} />
-              <Tab label="PUSH-NOTIFICATION" {...a11yProps(0)} />
+              <Tab label="STORED" {...a11yProps(0)} />
               <Tab label="Scrapper" {...a11yProps(2)} />
               <Tab label="Order" {...a11yProps(3)} />
               <Tab label="Todo" {...a11yProps(4)} />
@@ -67,7 +68,7 @@ function Pages() {
             <Tag />
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <WebPush />
+            <Stored />
           </TabPanel>
           <TabPanel value={value} index={2}>
             Scrapper
