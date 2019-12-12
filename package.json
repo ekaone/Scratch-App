@@ -1,13 +1,14 @@
 {
+  "homepage": "https://ekaone.github.io/scratch/",
   "name": "scratch",
   "version": "0.1.0",
-  "homepage": "https://ekaone.github.io/scratch/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.6.0",
     "@material-ui/icons": "^4.5.1",
     "gh-pages": "^2.1.1",
     "react": "^16.11.0",
+    "react-add-to-homescreen": "^1.1.0",
     "react-device-detect": "^1.11.14",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0",
