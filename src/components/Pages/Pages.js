@@ -11,6 +11,7 @@ import TabPanel from "./TabPanel"
 import Tag from "../Tag"
 import Stored from "../Stored"
 import Homescreen from '../Homescreen'
+import Camera from '../Camera'
 
 function a11yProps(index) {
   return {
@@ -58,7 +59,7 @@ function Pages() {
               <Tab label="Tags" {...a11yProps(1)} />
               <Tab label="STORED" {...a11yProps(0)} />
               <Tab label="Homescreen" {...a11yProps(2)} />
-              <Tab label="Order" {...a11yProps(3)} />
+              <Tab label="Camera" {...a11yProps(3)} />
               <Tab label="Todo" {...a11yProps(4)} />
               <Tab label="Traffic" {...a11yProps(5)} />
               <Tab label="Other" {...a11yProps(6)} />
@@ -74,7 +75,7 @@ function Pages() {
             <Homescreen />
           </TabPanel>
           <TabPanel value={value} index={3}>
-            Order Updated...!!
+            <Camera />
           </TabPanel>
           <TabPanel value={value} index={4}>
             Todo

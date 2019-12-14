@@ -12,6 +12,7 @@
     "react-device-detect": "^1.11.14",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0",
+    "react-webcam": "^4.0.0",
     "store": "^2.0.12"
   },
   "scripts": {
