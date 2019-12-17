@@ -1,12 +1,13 @@
 import React from 'react';
 import {
-  Pages
+  Pages,
+  SocketView
 } from './components'
 
 function App() {
   return (
     <>
-      <Pages />
+      <SocketView />
     </>
   );
 }
