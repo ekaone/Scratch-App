@@ -1,13 +1,14 @@
 import React from 'react';
 import {
   Pages,
-  SocketView
+  SocketView,
+  DropZoneFile
 } from './components'
 
 function App() {
   return (
     <>
-      <SocketView />
+      <DropZoneFile />
     </>
   );
 }
