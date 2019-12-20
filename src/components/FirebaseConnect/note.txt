@@ -1,0 +1,23 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAgqIxy6c8k-DXp-32qM6lNSb2XN59cFkM",
+    authDomain: "ambient-future-198109.firebaseapp.com",
+    databaseURL: "https://ambient-future-198109.firebaseio.com",
+    projectId: "ambient-future-198109",
+    storageBucket: "ambient-future-198109.appspot.com",
+    messagingSenderId: "269591731211",
+    appId: "1:269591731211:web:a597fbe0ec3f8451f53b0e",
+    measurementId: "G-6ERLFVKCXT"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>

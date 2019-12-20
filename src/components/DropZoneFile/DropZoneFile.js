@@ -36,22 +36,35 @@ export default function DropZoneFile() {
 
 
   const [files, setFiles] = useState([]);
+  
   const {getRootProps, getInputProps} = useDropzone({
     accept: 'image/*',
     onDrop: acceptedFiles => {
-      setFiles(acceptedFiles.map(file => Object.assign(file, {
-        preview: URL.createObjectURL(file)
+      setFiles(acceptedFiles.map((file, index) => Object.assign(file, {
+        preview: URL.createObjectURL(file, index),
+        index: index
       })));
     }
   });
   
+  // const handleDelete = (id) => {
+  //   const d = files.filter(f => {
+  //     return f.preview !== id
+  //   })
+  //   setFiles({files: d})
+  //   // console.log(d)
+  // }
+
   const thumbs = files.map(file => (
     <div style={thumb} key={file.name}>
       <div style={thumbInner}>
         <img
           src={file.preview}
           style={img}
+          alt={file.name}
+          // onClick={() => handleDelete(file.preview)}
         />
+        <br />
       </div>
     </div>
   ));
@@ -60,6 +73,7 @@ export default function DropZoneFile() {
     // Make sure to revoke the data uris to avoid memory leaks
     files.forEach(file => URL.revokeObjectURL(file.preview));
   }, [files]);
+
 
   return (
     <>
@@ -72,6 +86,10 @@ export default function DropZoneFile() {
           {thumbs}
         </aside>
       </section>
+      <br />
+      <button onClick={() => setFiles([])}>Delete Images</button>
+      <br />
+      <pre>{ JSON.stringify(files, null, 2) }</pre>
     </>
   )
 }

@@ -2,13 +2,14 @@ import React from 'react';
 import {
   Pages,
   SocketView,
-  DropZoneFile
+  DropZoneFile,
+  FirebaseConnect
 } from './components'
 
 function App() {
   return (
     <>
-      <DropZoneFile />
+      <FirebaseConnect />
     </>
   );
 }
