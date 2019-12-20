@@ -1,58 +1,58 @@
 import React, { useState, useEffect } from 'react'
-import firebase from 'firebase'
+import { db } from './FirebaseConfig'
 
-const firebaseInit = () => {
-  const firebaseConfig = {
-    apiKey: "AIzaSyAgqIxy6c8k-DXp-32qM6lNSb2XN59cFkM",
-    authDomain: "ambient-future-198109.firebaseapp.com",
-    databaseURL: "https://ambient-future-198109.firebaseio.com",
-    projectId: "ambient-future-198109",
-    storageBucket: "ambient-future-198109.appspot.com",
-    messagingSenderId: "269591731211",
-    appId: "1:269591731211:web:a597fbe0ec3f8451f53b0e",
-    measurementId: "G-6ERLFVKCXT"
-  }
-  firebase.initializeApp(firebaseConfig);
-}
-
-firebaseInit()
 
 export default function FirebaseConnect() {  
 
-  const [values, setValues] = useState(0)
-  const [datas, setDatas] = useState(null)
+  const [counters, setCounters] = useState(0)
+  const [dates, setDates] = useState(null)
+  const [collections, setcollections] = useState(null)
 
-  const handleAddData = () => {
-    setValues(ps => ps + 1)
-  }
-
-  const addFirebase = () => {
-    firebase.database().ref('/').set(values);
-    console.log('DATA SAVED');
-  }
-
-  useEffect(() => {
-    let ref = firebase.database().ref('/');
-    ref.on('value', snapshot => {
-      const state = snapshot.val();
-      setDatas(state);
+  const handleAddDate = () => {
+    db.collection("mydates").doc("dates").set({
+      mydatevalue: dates,
+    })
+    .then(function() {
+        console.log("Date successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
     });
-  
-    console.log('DATA RETRIEVED');
-  }, [datas])
+  }
 
+  const handleAddCounter = () => {
+    db.collection("mycounter").doc("counter").set({
+      mycounter: counters,
+    })
+    .then(function() {
+        console.log("Date successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+  }
 
+  const getCollections = () => {
+    db.collection("mycounter")
+    .get()
+    .then(querySnapshot => {
+      const data = querySnapshot.docs.map(doc => doc.data());
+      // console.log(data); // array of cities objects
+      setcollections(data)
+    });
+  }
 
-  addFirebase()
-  console.log(values)
-  
+  getCollections()
+
   return (
     <>
       Firebase
       <br />
-      <button onClick={handleAddData}>Add</button>
+      <button onClick={() => handleAddCounter(setCounters(ps => ps + 1))}>Counter</button>
       <br />
-      <pre>{ JSON.stringify(datas, null, 2) }</pre>
+      <button onClick={() => handleAddDate(setDates(new Date()))}>Date</button>
+      <br />
+      <pre>{ JSON.stringify(collections, null, 2) }</pre>
     </>
   )
 }
