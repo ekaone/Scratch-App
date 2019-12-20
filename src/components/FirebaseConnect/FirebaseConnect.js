@@ -20,6 +20,7 @@ firebaseInit()
 export default function FirebaseConnect() {  
 
   const [values, setValues] = useState(0)
+  const [datas, setDatas] = useState(null)
 
   const handleAddData = () => {
     setValues(ps => ps + 1)
@@ -30,6 +31,18 @@ export default function FirebaseConnect() {
     console.log('DATA SAVED');
   }
 
+  useEffect(() => {
+    let ref = firebase.database().ref('/');
+    ref.on('value', snapshot => {
+      const state = snapshot.val();
+      setDatas(state);
+    });
+  
+    console.log('DATA RETRIEVED');
+  }, [datas])
+
+
+
   addFirebase()
   console.log(values)
   
@@ -38,6 +51,8 @@ export default function FirebaseConnect() {
       Firebase
       <br />
       <button onClick={handleAddData}>Add</button>
+      <br />
+      <pre>{ JSON.stringify(datas, null, 2) }</pre>
     </>
   )
 }
