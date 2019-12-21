@@ -3,7 +3,8 @@ import {
   Pages,
   SocketView,
   DropZoneFile,
-  FirebaseConnect
+  FirebaseConnect,
+  MapPortal
 } from './components'
 
 function App() {
