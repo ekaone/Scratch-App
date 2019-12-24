@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { db } from './FirebaseConfig'
 
+/**
+ * https://firebase.google.com/docs/firestore/query-data/queries
+ */
+
 export default function FirebaseConnect() {  
 
   const [counters, setCounters] = useState()
