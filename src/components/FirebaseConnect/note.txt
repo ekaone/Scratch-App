@@ -47,3 +47,103 @@ db.collection("cities")
   const data = querySnapshot.docs.map(doc => doc.data());
   console.log(data); // array of cities objects
 });
+
+
+----------------------------
+
+
+import React, { useState, useEffect } from 'react'
+import { db } from './FirebaseConfig'
+
+export default function FirebaseConnect() {  
+
+  const [counters, setCounters] = useState(0)
+  //const [dates, setDates] = useState(null)
+  const [collections, setcollections] = useState(null)
+  const [collection, setcollection] = useState('mydates')
+
+  const handleAddCounter = () => {
+    db.collection("mycounter").doc("counter").set({
+      mycounter: counters + 1,
+    })
+    .then(function() {
+        console.log("Counter successfully written!");
+        setCounters(ps => ps + 1)
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+  }
+
+  const getCollection = (cl) => {
+    setcollection(cl)
+  }
+
+  const getCollections = (collection) => {
+    db.collection(collection)
+    .get()
+    .then(querySnapshot => {
+      const data = querySnapshot.docs.map(doc => doc.data());
+      setcollections(data)
+    })
+    .catch(function(error) {
+      console.error("Error get collection: ", error);
+    });
+  }
+
+  useEffect(() => {
+    getCollections(collection)
+  },[collection])
+  
+  console.log("-- :", collection)
+
+  return (
+    <>
+      <button onClick={() => handleAddCounter()}>Add Counter</button>
+      <hr />
+      <button onClick={() => getCollection('mycounter')}>Get Counter</button>
+      <p />
+      <button onClick={() => getCollection('mydates')}>Get Date</button>
+      <p />
+      <button onClick={() => getCollection('users')}>Get Users</button>
+      <hr />
+      <pre>
+      { 
+        collections === null ? 'Loading...' : JSON.stringify(counters, null, 2) 
+      }
+      </pre>
+    </>
+  )
+}
+
+// const handleAddDate = () => {
+//   db.collection("mydates").doc("dates").set({
+//     mydatevalue: dates,
+//   })
+//   .then(function() {
+//       console.log("Date successfully written!");
+//   })
+//   .catch(function(error) {
+//       console.error("Error writing document: ", error);
+//   });
+// }
+
+// const handleAddCounter = () => {
+//   db.collection("mycounter").doc("counter").set({
+//     mycounter: counters,
+//   })
+//   .then(function() {
+//       console.log("Date successfully written!");
+//   })
+//   .catch(function(error) {
+//       console.error("Error writing document: ", error);
+//   });
+// }
+
+----------------
+
+let t = 0
+  const addCounter = (n) => {
+    t += n
+    return t
+  }
