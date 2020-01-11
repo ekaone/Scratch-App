@@ -1,7 +1,7 @@
 import React from 'react'
 import { MuiThemeProvider, makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
+import Button from '@material-ui/core/Button';
 
 const theme = createMuiTheme({
   palette: {
@@ -48,7 +48,7 @@ const useStyles = makeStyles({
   },
 })
 
-export default function Button() {
+export default function Buttons() {
   const classes = useStyles()
 
   return (
@@ -56,10 +56,10 @@ export default function Button() {
       <MuiThemeProvider theme={theme}>
       <CssBaseline />
         <div className={classes.container}>
-          <button className={ `${classes.btn} ${classes.btn1}` }>Hover button</button>
-          <button className={ `${classes.btn} ${classes.btn2}` }>Hover button</button>
-          <button className={ `${classes.btn} ${classes.btn3}` }>Hover button</button>
-          <button className={ `${classes.btn} ${classes.btn4}` }>Hover button</button>
+          <Button className={ `${classes.btn} ${classes.btn1}` }>Hover button</Button>
+          <Button className={ `${classes.btn} ${classes.btn2}` }>Hover button</Button>
+          <Button className={ `${classes.btn} ${classes.btn3}` }>Hover button</Button>
+          <Button className={ `${classes.btn} ${classes.btn4}` }>Hover button</Button>
         </div>
       </MuiThemeProvider>
     </>
