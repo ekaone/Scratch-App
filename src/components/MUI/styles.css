@@ -1,0 +1,47 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+.container{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+
+.btn{
+  border: none;
+  margin: 20px;
+  padding: 24px;
+  width: 220px;
+  font-family: "montserrat",sans-serif;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  background-size: 200%;
+  transition: 0.6s;
+}
+
+.btn1{
+  background-image: linear-gradient(to left,#3867d6,#fed330,#20bf6b);
+}
+
+.btn2{
+  background-image: linear-gradient(to left,#2d98da,#eb3b5a,#4b6584);
+}
+
+.btn3{
+  background-image: linear-gradient(to left,#12CBC4,#0652DD,#12CBC4);
+}
+
+.btn4{
+  background-image: linear-gradient(to left,#fd9644,#3d3d3d,#26de81);
+}
+
+.btn:hover{
+  background-position: right;
+}
