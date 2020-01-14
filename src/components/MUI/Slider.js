@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   root: {
     width: 700,
     top: '20%',
@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     transform: 'translate(-50%, -50%)',
   }
-}));
+});
 
 
 export default function Sliders() {
@@ -38,9 +38,9 @@ export default function Sliders() {
           max={110}
           onChange={handleChange}
         />
-      <div style={{ fontSize: value }}>
-        Font size {value}
-      </div>
+        <Typography id="font" style={{ fontSize: value }}>
+          Font Size {value}
+        </Typography>
       </div>
     </>
   );
