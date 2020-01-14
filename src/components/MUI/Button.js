@@ -1,13 +1,6 @@
 import React from 'react'
-import { MuiThemeProvider, makeStyles, createMuiTheme } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-
-const theme = createMuiTheme({
-  palette: {
-    type: "dark"
-  }
-});
 
 const useStyles = makeStyles({
   container: {
@@ -53,15 +46,12 @@ export default function Buttons() {
 
   return (
     <>
-      <MuiThemeProvider theme={theme}>
-      <CssBaseline />
-        <div className={classes.container}>
-          <Button className={ `${classes.btn} ${classes.btn1}` }>Hover button</Button>
-          <Button className={ `${classes.btn} ${classes.btn2}` }>Hover button</Button>
-          <Button className={ `${classes.btn} ${classes.btn3}` }>Hover button</Button>
-          <Button className={ `${classes.btn} ${classes.btn4}` }>Hover button</Button>
-        </div>
-      </MuiThemeProvider>
+      <div className={classes.container}>
+        <Button className={ `${classes.btn} ${classes.btn1}` }>Hover button</Button>
+        <Button className={ `${classes.btn} ${classes.btn2}` }>Hover button</Button>
+        <Button className={ `${classes.btn} ${classes.btn3}` }>Hover button</Button>
+        <Button className={ `${classes.btn} ${classes.btn4}` }>Hover button</Button>
+      </div>
     </>
   )
 }
