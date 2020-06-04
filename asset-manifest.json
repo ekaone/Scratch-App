@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/Scratch-App/static/js/main.6d02484d.chunk.js",
+    "main.js.map": "/Scratch-App/static/js/main.6d02484d.chunk.js.map",
+    "runtime-main.js": "/Scratch-App/static/js/runtime-main.2d358da0.js",
+    "runtime-main.js.map": "/Scratch-App/static/js/runtime-main.2d358da0.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/Scratch-App/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.58540502.chunk.js": "/Scratch-App/static/js/2.58540502.chunk.js",
+    "static/js/2.58540502.chunk.js.map": "/Scratch-App/static/js/2.58540502.chunk.js.map",
+    "index.html": "/Scratch-App/index.html",
+    "precache-manifest.d4ef4c061e6ceae52e2ad0c5613cf468.js": "/Scratch-App/precache-manifest.d4ef4c061e6ceae52e2ad0c5613cf468.js",
+    "service-worker.js": "/Scratch-App/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/Scratch-App/static/css/2.af3c1da9.chunk.css.map",
+    "static/js/2.58540502.chunk.js.LICENSE.txt": "/Scratch-App/static/js/2.58540502.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2d358da0.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.58540502.chunk.js",
+    "static/js/main.6d02484d.chunk.js"
+  ]
+}
