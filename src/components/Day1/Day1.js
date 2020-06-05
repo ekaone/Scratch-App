@@ -14,6 +14,8 @@ export default function Day1() {
     { id: Math.random(), name: "Transport", amount: 75 }
   ]);
 
+  const [buttonActive, setButtonActive] = useState(true);
+
   const lastExpense = expenseData.map(ed => ed.amount);
 
   const [data, setData] = useState({
@@ -23,15 +25,21 @@ export default function Day1() {
     totalExpense: null
   });
 
+  const handleOnChange = name => e => {
+    setData({ ...data, [name]: e.target.value });
+  };
+
   useEffect(() => {
     setData(ps => {
       return { ...ps, totalExpense: lastExpense.reduce(reducer) };
     });
-  }, []);
 
-  const handleOnChange = name => e => {
-    setData({ ...data, [name]: e.target.value });
-  };
+    if (data.expense === "" || data.transaction === "") {
+      setButtonActive(true);
+    } else {
+      setButtonActive(false);
+    }
+  }, [data.expense, data.transaction]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -74,12 +82,18 @@ export default function Day1() {
         </Row>
         <Row className="justify-content-md-center">
           <Col sm={12} md={6} className="d-flex justify-content-center mb-2">
-            <Form handleSubmit={handleSubmit} handleOnChange={handleOnChange} />
+            <Form
+              handleSubmit={handleSubmit}
+              handleOnChange={handleOnChange}
+              buttonActive={buttonActive}
+            />
           </Col>
           <Col sm={12} md={6} className="d-flex justify-content-center">
             <Expense expensesData={expenseData} />
           </Col>
         </Row>
+        <br />
+        {JSON.stringify(data, null, 2)}
       </Container>
     </>
   );
