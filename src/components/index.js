@@ -12,12 +12,11 @@
 // export { default as MUI } from './MUI'
 // export { default as Voice } from './Voice'
 // export { default as VideoPlayer } from './VideoPlayer'
-// export { default as ReactQuery } from './ReactQuery'
-// export { default as ReactInfiniteCalendar } from './ReactInfiniteCalendar'
+// // export { default as ReactQuery } from './ReactQuery'
+// export { default as ReactInfiniteCalendar } from "./ReactInfiniteCalendar";
 // export { default as ReactVirtualized } from './ReactVirtualized'
 // export { default as ReactStrap } from './ReactStrap'
-export { default as Day1 } from "./Day1";
-// export { default as Day2 } from './Day2'
 // export { default as Cards } from './CardsBootstrap'
 // export { default as SyntaxHighlighter } from "./SyntaxHighlighter";
-// export { default as Markdown } from "./ReactMarkdown";
+// export { default as ReactCalendar } from "./ReactCalendar";
+export { default as ReactCalendar } from "./ReactCalendar";

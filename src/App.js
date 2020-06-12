@@ -17,13 +17,13 @@ import {
   // ReactInfiniteCalendar
   // ReactVirtualized
   // ReactStrap
-  Day1
-  // Day2
   // Cards
   // SyntaxHighlighter
   // Markdown
+  ReactCalendar
 } from "./components";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-calendar/dist/Calendar.css";
 
 // const theme = createMuiTheme({
 //   palette: {
@@ -36,7 +36,7 @@ function App() {
     <>
       {/* <MuiThemeProvider theme={theme}> */}
       {/* <CssBaseline /> */}
-      <Day1 />
+      <ReactCalendar />
       {/* </MuiThemeProvider> */}
     </>
   );
