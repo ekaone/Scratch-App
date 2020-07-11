@@ -4,7 +4,7 @@ import React from "react";
 import {
   // Pages,
   // SocketView,
-  // DropZoneFile,
+  // DropZoneFile
   // FirebaseConnect,
   // MapPortal,
   // MapBoxGL,
@@ -20,7 +20,9 @@ import {
   // Cards
   // SyntaxHighlighter
   // Markdown
-  ReactCalendar
+  // ReactCalendar
+  // Camera
+  BeautyStars
 } from "./components";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "react-calendar/dist/Calendar.css";
@@ -36,7 +38,7 @@ function App() {
     <>
       {/* <MuiThemeProvider theme={theme}> */}
       {/* <CssBaseline /> */}
-      <ReactCalendar />
+      <BeautyStars />
       {/* </MuiThemeProvider> */}
     </>
   );

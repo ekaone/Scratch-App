@@ -3,7 +3,7 @@
 // export { default as Stored } from './Stored'
 // export { default as Homescreen } from './Homescreen'
 // export { default as SocketView } from './SocketView'
-// export { default as DropZoneFile } from './DropZoneFile'
+// export { default as DropZoneFile } from "./DropZoneFile";
 // export { default as FirebaseConnect } from './FirebaseConnect'
 // export { default as MapPortal } from './MapPortal'
 // export { default as MapBoxGL } from './MapBoxGL'
@@ -19,4 +19,5 @@
 // export { default as Cards } from './CardsBootstrap'
 // export { default as SyntaxHighlighter } from "./SyntaxHighlighter";
 // export { default as ReactCalendar } from "./ReactCalendar";
-export { default as ReactCalendar } from "./ReactCalendar";
+// export { default as Camera } from "./Camera";
+export { default as BeautyStars } from "./BeautyStars";
